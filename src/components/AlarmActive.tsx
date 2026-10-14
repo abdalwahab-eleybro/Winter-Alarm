@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { startAlarmSound, stopAlarmSound, playSuccessSound, startSpeechAlarm, stopSpeechAlarm } from '../utils/sound';
 import QRScanner from './QRScanner';
+import ManualCodeInput from './ManualCodeInput';
 
 interface AlarmActiveProps {
   qrCode: string;
@@ -382,6 +383,10 @@ export default function AlarmActive({ qrCode, alarmTime, onDismissed }: AlarmAct
             <QRScanner
               expectedCode={qrCode}
               onScanSuccess={handleScanSuccess}
+            />
+            <ManualCodeInput
+              qrCode={qrCode}
+              onSuccess={handleScanSuccess}
             />
           </div>
         )}
