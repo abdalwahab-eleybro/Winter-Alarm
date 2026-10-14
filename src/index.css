@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes flash-bg {
+  0%, 100% { background-color: #dc2626; }
+  50% { background-color: #ea580c; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s infinite;
+}
+
+.animate-flash {
+  animation: flash-bg 0.5s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Ensure full screen on mobile */
+html, body, #root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make number inputs look better */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* QR Scanner styles */
+#qr-reader video {
+  border-radius: 12px !important;
+  width: 100% !important;
+}
+
+#qr-reader__scan_region {
+  min-height: 250px;
+}
+
+#qr-reader__dashboard {
+  padding: 10px 0 !important;
+}
